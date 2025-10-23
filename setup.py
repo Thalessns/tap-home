@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="Python API Crud",
+    name="CF Handler",
     version="0.1.0",
     author="Thales",
     packages=find_packages(),

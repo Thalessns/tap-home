@@ -1,5 +1,5 @@
 [project]
-name = "python-api-crud"
+name = "cf-handler"
 version = "0.1.0"
 description = "API CRUD em Python usando FastAPI e SQLAlchemy"
 authors = [
@@ -29,10 +29,5 @@ testpaths = [
 ]
 env = [
     "APP_HOST=localhost",
-    "APP_PORT=6000",
-    "DB_HOST=127.0.0.1:3306",
-    "DB_PORT=3306",
-    "DB_USER=root",
-    "DB_PASSWORD=Pass123456@",
-    "DB_NAME=api_crud",
+    "APP_PORT=8000",
 ]
