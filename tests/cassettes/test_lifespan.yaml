@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - localhost:8000
+      user-agent:
+      - python-httpx/0.28.1
+    method: GET
+    uri: http://localhost:8000/
+  response:
+    body:
+      string: '{"message":"API is running"}'
+    headers:
+      content-length:
+      - '28'
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

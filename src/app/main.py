@@ -15,4 +15,16 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Python API Crud", version="0.1.0", lifespan=lifespan)
+
+
+@app.get("/")
+async def root() -> dict:
+    """Root endpoint to check if the API is running.
+    
+    Returns:
+        dict: A message indicating the API is running.
+    """
+    return {"message": "API is running"}
+
+
 app.include_router(tag_router)
