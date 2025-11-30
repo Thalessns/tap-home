@@ -42,10 +42,8 @@ class TagService:
             tag_query = tag_table.insert().values(
                 tag_id=new_tag.tag_id,
                 name=new_tag.name,
-                led_flag=new_tag.led_flag,
-                led_color=new_tag.led_color,
-                music_flag=new_tag.music_flag,
-                music_id=new_tag.music_id,
+                preference_id=new_tag.preference_id,
+                routine_id=new_tag.routine_id,
                 first_use=timestamp,
                 last_use=timestamp
             )
@@ -104,13 +102,28 @@ class TagService:
         await cls.get_tag_by_id(data.tag_id)  # Ensure tag exists
         timestamp = TagUtils.get_timestamp()
         tag_query = tag_table.update().where(tag_table.c.tag_id == data.tag_id).values(
+            preference_id=data.preference_id,
+            routine_id=data.routine_id,
             last_use=timestamp
         )
         history_query = history_table.insert().values(
             tag_id=data.tag_id, timestamp=timestamp
         )
         await Database.execute_many([tag_query, history_query])
-        
+
+    @classmethod
+    async def delete_tag(cls, tag_id: str) -> None:
+        """Delete a tag by its ID.
+
+        Args:
+            tag_id (str): The ID of the tag to delete.
+
+        Raises:
+            TagNotFoundException: If the tag with the specified ID does not exist.
+        """
+        query = tag_table.delete().where(tag_table.c.tag_id == tag_id)
+        await Database.execute(query)
+
     @classmethod
     async def tag_exists(cls, tag_id: str) -> bool:
         """Check if a tag exists by its ID.

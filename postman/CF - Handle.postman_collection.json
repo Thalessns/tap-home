@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "cba88cf0-fe0d-491d-bb7f-96e9d66053d5",
+		"name": "CF - Handle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34268498"
+	},
+	"item": [
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "Get Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cf-handle}}/tag?tag_id=teste",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"tag"
+							],
+							"query": [
+								{
+									"key": "tag_id",
+									"value": "teste"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tag History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-crud}}/tag/history?id=mimde",
+							"host": [
+								"{{api-crud}}"
+							],
+							"path": [
+								"tag",
+								"history"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "mimde"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cf-handle}}/tag",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"tag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Handle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cf-handle}}/tag/handle?tag_id=teste&name=tag-do-beirado&music_id=1&led_color=1&routine_id=2&start_time=14:00&end_time=15:00&weekday=2",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"tag",
+								"handle"
+							],
+							"query": [
+								{
+									"key": "tag_id",
+									"value": "teste"
+								},
+								{
+									"key": "name",
+									"value": "tag-do-beirado"
+								},
+								{
+									"key": "music_id",
+									"value": "1"
+								},
+								{
+									"key": "led_color",
+									"value": "1"
+								},
+								{
+									"key": "routine_id",
+									"value": "2"
+								},
+								{
+									"key": "start_time",
+									"value": "14:00"
+								},
+								{
+									"key": "end_time",
+									"value": "15:00"
+								},
+								{
+									"key": "weekday",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"example@f1rst.com\",\n    \"name\": \"new example\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-crud}}/user",
+							"host": [
+								"{{api-crud}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api-crud}}/user?email=example@f1rst.com",
+							"host": [
+								"{{api-crud}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "example@f1rst.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Music",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Musica aleatoria\",\n    \"content\": \"! - @ - * - ( - ) - ? - < - >\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cf-handle}}/music",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"music"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Musica aleatoria\",\n    \"content\": \"! - @ - * - ( - ) - ? - < - >\"\n}"
+						},
+						"url": {
+							"raw": "{{cf-handle}}/musics",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"musics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cf-handle}}/music?music_id=1",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"music"
+							],
+							"query": [
+								{
+									"key": "music_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Routine",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"start_time\": \"18:00\",\r\n    \"end_time\": \"18:05\",\r\n    \"weekday\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cf-handle}}/routine",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"routine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Routine By Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cf-handle}}/routine?routine_id=2",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"routine"
+							],
+							"query": [
+								{
+									"key": "routine_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Preference",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"music_id\": 1,\r\n    \"led_color\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cf-handle}}/preference",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"preference"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"music_id\": 1,\r\n    \"led_color\": 3\r\n}"
+						},
+						"url": {
+							"raw": "{{cf-handle}}/preferences",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"preferences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"music_id\": 1,\r\n    \"led_color\": 3\r\n}"
+						},
+						"url": {
+							"raw": "{{cf-handle}}/preference?music_id=1&led_color=3",
+							"host": [
+								"{{cf-handle}}"
+							],
+							"path": [
+								"preference"
+							],
+							"query": [
+								{
+									"key": "music_id",
+									"value": "1"
+								},
+								{
+									"key": "led_color",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
