@@ -1,10 +1,12 @@
 -----
 
-# 📡 Leitor NFC Inteligente com ESP32
+#  Leitor NFC Inteligente com ESP32
 
 Este projeto implementa um sistema IoT utilizando **MicroPython** e um **ESP32** para ler tags NFC (via módulo PN532), consultar uma API externa e executar feedbacks visuais (LEDs NeoPixel) e sonoros (Buzzer) baseados na resposta do servidor.
 
-## 🛠️ Hardware Necessário
+ <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/99c713aa-1c95-4838-b7c0-f2856db36791" />
+
+##  Hardware Necessário
 
   * **Microcontrolador:** ESP32
   * **Leitor NFC:** Módulo PN532 (Configurado em modo SPI)
@@ -12,7 +14,7 @@ Este projeto implementa um sistema IoT utilizando **MicroPython** e um **ESP32**
   * **Áudio:** Buzzer passivo
   * **Fonte de Alimentação:** 5V (USB ou externa)
 
-### 🔌 Pinagem (Wiring)
+###  Pinagem (Wiring)
 
 Conforme configurado em `main.py`:
 
@@ -27,7 +29,7 @@ Conforme configurado em `main.py`:
 
 > **Nota:** Certifique-se de que o GND de todos os componentes esteja conectado ao GND do ESP32.
 
-## ⚙️ Configuração
+##  Configuração
 
 Antes de rodar o projeto, edite o arquivo `main.py` com suas credenciais e endpoint:
 
@@ -38,7 +40,7 @@ SENHA = "SUA_SENHA_AQUI"
 URL_API = "https://seu-backend.com/api/tag" 
 ```
 
-### 📡 Formato da API
+###  Formato da API
 
 O sistema envia um GET request: `URL_API?tag_id=UID_DA_TAG`
 
@@ -52,7 +54,7 @@ O sistema espera uma resposta **JSON** com a seguinte estrutura para decidir o q
 }
 ```
 
-## 📂 Estrutura dos Arquivos
+##  Estrutura dos Arquivos
 
   * **`main.py`**: Arquivo principal. Gerencia o loop de leitura, conexão Wi-Fi e orquestra os periféricos.
   * **`pn532.py`**: Driver para comunicação com o módulo NFC PN532 via protocolo SPI.
@@ -61,7 +63,7 @@ O sistema espera uma resposta **JSON** com a seguinte estrutura para decidir o q
   * **`rotina.py`**: Implementa animações complexas de luz combinadas com sequências de tons no buzzer.
   * **`buzzer.py`**: *Music Player* com notas musicais e músicas pré-programadas (Mario Bros, Tetris, Nokia).
 
-## 🚀 Como Executar
+##  Como Executar
 
 1.  Instale o firmware MicroPython no seu ESP32.
 2.  Faça o upload de todos os arquivos `.py` para a raiz do dispositivo (usando Thonny IDE ou `ampy`).
