@@ -159,6 +159,7 @@ Configure em **Environment → Environment Variables**:
 | `APP_HOST` | `0.0.0.0` | Faz o FastAPI escutar a interface pública. |
 | `APP_PORT` | `$PORT` | Mantém compatibilidade com `AppConfig`. |
 | `DATABASE_URL` (opcional) | URL do banco (SQLite, MySQL, etc.) | Personalize se migrar do SQLite local. |
+| `HOURS_ADJUST` (opcional) | Quantidade de horas a ser ajustada. | Caso o servidor esteja em um fuso horário diferente. |
 | Segredos adicionais | tokens, URLs de APIs | Usar variáveis ou Secret Files do Render. |
 
 ### 5. Banco de dados
